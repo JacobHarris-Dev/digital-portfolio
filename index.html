@@ -16,37 +16,45 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+    
+        <!-- Nav section -->
+    
+    <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+    </button>
 
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="#services" class="nav__link">What I do</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
+            <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
     <div class="hero">
-        <div id="particles"></div>
+    <div id="particles"></div>
 
-            <header>
-                <div class="logo">
-                    <img src="img/placeholder.png" alt="">
-                </div>
-                <button class="nav-toggle" aria-label="toggle navigation">
-                    <span class="hamburger"></span>
-                </button>
-                <nav class="nav">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="#services" class="nav__link">What I do</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
-                    </ul>
-                </nav>
-            </header>
-        
+    <header>
+        <div class="logo">
+            <img src="img/placeholder.png" alt="">
+        </div>
 
-        <!-- Introduction -->
-        <section class="intro" id="home">
-            <h1 class="section__title section__title--intro">
-                Hi, I am <strong>Jacob Harris</strong>
-            </h1>
-            <p class="section__subtitle section__subtitle--intro">Comp Sci student at UGA</p>
-            <img src="img/placeholder.png" alt="a picture of me" class="intro__img">
-        </section>
-    </div>
+        <!-- move the hamburger inside hero/header -->
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+    </header>
+
+    <section class="intro" id="home">
+        <h1 class="section__title section__title--intro">
+            Hi, I am <strong>Jacob Harris</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">Comp Sci student at UGA</p>
+        <img src="img/placeholder.png" alt="a picture of me" class="intro__img">
+    </section>
+</div>
         
         <!-- My services -->
         <section class="my-services" id="services">
