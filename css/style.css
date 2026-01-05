@@ -452,6 +452,22 @@ header {
     }   
 }
 
+.skills-image-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.skills-image-box img {
+  /*width: calc(100% + 1.5em); */ 
+  /*max-width: 100%;*/ 
+  height: auto;
+ 
+}
+
+
+
 .my-work {
     background-color: var(--clr-dark);
     color: var(--clr-light);
