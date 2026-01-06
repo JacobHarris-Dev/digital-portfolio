@@ -546,6 +546,21 @@ header {
     padding: .5em;
 }
 
+.footer__title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.footer__text {
+  max-width: 800px;
+  margin: 0 auto 1.25rem;
+  color: #bbb; /* adjust to your theme */
+  line-height: 1.6;
+  margin-bottom: 3rem; /* increase this value */
+  font-size: 1.2rem;     
+}
+
+
 /* Individual portfolio item styles */
 
 .portfolio-item-individual {
