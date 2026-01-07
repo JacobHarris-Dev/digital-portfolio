@@ -570,7 +570,53 @@ header {
 }
 
 .portfolio-item-individual p {
-    max-width: 600px;
+    margin: 0.5em 0;   /* top/bottom, left/right */
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2rem; /* optional space below */
+}
+
+.logoTwo img {
+  width: 250px;   /* adjust this value */
+  height: auto;   /* keeps proportions */
+}
+
+.portfolio-item-individual img {
+    display: block;       /* ensures proper spacing, avoids inline quirks */
+    margin-bottom: 2rem;  /* adds space below the image */
+}
+
+.tech-stack {
+    max-width: 600px;       /* keep line length readable */
+    margin: 1rem auto;      /* center block */
+    padding-left: 1.2rem;   /* indent bullets slightly */
+}
+
+.tech-stack li {
+    margin-bottom: 0.6rem;  /* spacing between items */
+    line-height: 1.5;       /* improves readability */
+}
+
+.subheader-link {
+    display: block;          /* ensures it can span full width */
+    width: 100%;             /* take up the entire container width */
+    text-align: center;      /* center the content inside */
+    margin-top: 1.5rem;      /* spacing from the subheader */
+    font-size: 1.5rem;       /* bigger text */
+    font-weight: bold;       /* optional emphasis */
+    padding-left: 100%;   
+    white-space: nowrap;         /* keep it all on one line */
+}
+
+.subheader-link .footer__link {
+    font-size: 1.6rem;       /* make the link slightly bigger */
+    color: #3B82F6;          /* Discord blue */
+    text-decoration: none;   /* remove underline initially */
+    transition: opacity 0.3s;
+}
+
+.subheader-link .footer__link:hover {
+    text-decoration: underline;
+    opacity: 0.7;
 }

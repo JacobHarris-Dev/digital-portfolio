@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JacobHarris Portfolio Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+        
+        <script src="https://kit.fontawesome.com/8b64703809.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="logoTwo">
+                <img src="img/blackLogo.png" alt="">
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+       
+         <!-- Introduction -->
+        <section class="intro">
+            <h1 class="section__title section__title--intro">
+                Educational<br>Password Cracker
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">Methods like bruteforce, dictionary, and more </p>
+            <img src="img/lockImage.png" alt="" class="intro__img">
+
+            <p class="subheader-link">
+                <a href="https://github.com/JacobHarris-Dev/educational-password-cracker" class="footer__link" target="_blank" rel="noopener noreferrer">
+                    View Discord repository
+                </a>
+            </p>
+
+
+        </section>
+
+        <div class="portfolio-item-individual">
+            <p>Educational Password Cracker is a Java-based learning tool designed to demonstrate how common password-cracking techniques work and why strong 
+                assword practices matter. The project allows users to experiment with multiple attack methods and hashing strategies, illustrating how factors
+                like salting, peppering, and character complexity affect security and cracking difficulty. Built strictly for educational and ethical purposes, 
+                it emphasizes responsible programming while helping users understand real-world security vulnerabilities.</p>
+
+            <img src="img/placeholder.png" alt="">
+
+            <p>My goal was to deepen my understanding of cybersecurity concepts in preparation for a hacking competition while also creating an educational tool 
+               that helps users learn key security principles. By building this project, I was able to explore common attack methods firsthand while emphasizing 
+               ethical hacking and responsible programming practices.</p>
+            
+               <h3>Tech Stack</h3>
+                <ul class="tech-stack">
+                    <li><strong>Language:</strong> Java 17 - Core programming language</li>
+                    <li><strong>Build/Dependency Management:</strong> Maven</li>
+                    <li><strong>Security Tools:</strong> Java Security API, MessageDigest (MD5, SHA), SecureRandom for salt generation</li>
+                    <li><strong>Encoding:</strong> Base64 for binary-to-text encoding</li>
+                    <li><strong>Algorithms:</strong> Recursion & Backtracking for brute-force password generation</li>
+                    <li><strong>Hashing Techniques:</strong> Raw hash, salted hash, peppered hash, salted + peppered hash</li>
+                    <li><strong>Timing & Performance:</strong> System.nanoTime() for runtime tracking and progress updates</li>
+                </ul>
+
+            <p>One of the main challenges was designing an efficient brute-force algorithm without relying on impractical nested loops, 
+                which led me to implement a recursive and backtracking-based solution. Optimizing performance required prioritizing simpler character 
+                sets before expanding to more complex combinations, a strategy commonly used in real-world cracking tools. Balancing realism with ethical 
+                constraints was also critical to ensure the project remained strictly educational.</p>
+
+            <h3>What I Learned</h3>
+
+            <p>
+            This project helped me understand how small security decisions, such as hashing strategies and password complexity, can cascade into real-world vulnerabilities. 
+            I gained hands-on experience with recursion, performance benchmarking, and secure system design from an attacker's perspective. Most importantly, it reinforced 
+            my confidence in scoping and independently building a complex technical project from concept to completion.
+            </p>
+
+        </div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <!-- replace with your own email address -->
+            <a href="jacobaharris05@gmail.com" class="footer__link">jacobaharris05@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item"><a class="social-list__link" href="https://github.com/JacobHarris-Dev">
+                    <i class="fa-brands fa-github"></i>
+                </a></li>
+                <li class="social-list__item"><a class="social-list__link" href="https://www.linkedin.com/in/jacob-harris-4874a432a/">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a></li>
+            </ul>
+        </footer>
+        
+        <script src="js/index.js"></script>
+
+    </body>
+</html>
