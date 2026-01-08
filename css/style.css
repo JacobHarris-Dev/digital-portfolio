@@ -342,6 +342,25 @@ header {
     display: inline-block;
 }
 
+/* Intro image */
+.intro__img,
+.about-me__img,
+.skills-image-box img {
+    width: 100%;       /* scale to container width */
+    max-width: 1200px;  /* desktop max size */
+    height: auto;      /* keep aspect ratio */
+    display: block;
+    margin: 0 auto;    /* center horizontally */
+}
+
+.about-me__img {
+    width: 100%;        /* scale with parent container */
+    max-width: 300px;   /* desktop max size */
+    height: auto;       /* keep aspect ratio */
+    display: block;     /* removes inline spacing issues */
+    margin: 1.5rem auto; /* centers the image */
+}
+
 /* Desktop layout for intro section */
 @media (min-width: 600px) {
 
@@ -360,7 +379,7 @@ header {
     /* Positions intro image within grid and layers it above overlapping elements */
     .intro__img {
         grid-area: img;
-        min-width: 250px;
+        min-width: 0px;
         position: relative;
         z-index: 2;
     }
@@ -623,6 +642,26 @@ header {
   height: auto;   /* keeps proportions */
 }
 
+.intro__img {
+    max-width: 100%;     /* prevents overflow on small screens */
+    height: auto;        /* keeps aspect ratio */
+    width: 300px;        /* desktop size */
+    margin: 1.5rem auto; /* centers image */
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .intro__img {
+        width: 200px;    /* smaller on tablets/phones */
+    }
+}
+
+@media (max-width: 480px) {
+    .intro__img {
+        width: 160px;    /* even smaller on phones */
+    }
+}
+
 /* Tech stack list styling */
 .portfolio-item-individual img {
     display: block;       /* ensures proper spacing, avoids inline quirks */
@@ -643,14 +682,9 @@ header {
 
 /* Centered subheader link styling */
 .subheader-link {
-    display: block;          
-    width: 100%;             
-    text-align: center;      
-    margin-top: 1.5rem;     
-    font-size: 1.5rem;      
-    font-weight: bold;     
-    padding-left: 100%;   
-    white-space: nowrap;        
+    margin-top: 1.5rem;       /* spacing above link */
+    text-align: center;        /* center the text within its parent column */
+    width: 100%;           
 }
 
 /* Subheader link appearance */
@@ -659,6 +693,7 @@ header {
     color: #3B82F6;          
     text-decoration: none;   
     transition: opacity 0.3s;
+    white-space: nowrap;
 }
 
 /* Subheader link hover effect */
@@ -667,11 +702,18 @@ header {
     opacity: 0.7;
 }
 
-/* Video styling for portfolio pages */
 .portfolio-item-individual video {
-    max-width: 50%;
+    width: 50%;       /* default desktop size */
+    max-width: 800px; /* optional max size */
     height: auto;
     display: block;
     margin: 2rem auto;
-    border-radius: 8px; /* optional */
+    border-radius: 8px;
+}
+
+/* For small screens */
+@media (max-width: 768px) {
+    .portfolio-item-individual video {
+        width: 90%;   /* nearly full width on mobile */
+    }
 }
