@@ -1,4 +1,4 @@
-# Jacob Harris — Digital Portfolio
+# Jacob Harris - Digital Portfolio
 A personal website showcasing projects, skills, and experience in Computer Science.
 
 🔗 Live Site: https://yourdomain.com

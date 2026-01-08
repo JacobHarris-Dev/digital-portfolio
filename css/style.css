@@ -1,3 +1,5 @@
+/* Global reset box & model; ensures consisten sizing 
+behavior across all elements */
 *,
 *::before,
 *::after {
@@ -5,27 +7,32 @@
 }
 
 /* Custom Properties, update these for your own design */
-
 :root {
+     /* Font families */
     --ff-primary: 'Inter', sans-serif;
     --ff-secondary: 'Montserrat', monospace;
     
+    /* Font weights */
     --fw-reg: 300;
     --fw-bold: 900;
     
+    /* Color palette */
     --clr-light: #fff;
     --clr-dark: #303030;
     --clr-accent: #3B82F6;
     
+    /* Typography scale */
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
     
+    /* Box shadow preset */
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
           0.125em 0.125em 0.25em rgba(0,0,0,.15);
 }
 
+/* Responsive typography - scales font sizes on larger screens*/
 @media (min-width: 800px) {
     :root {
         --fs-h1: 4.5rem;
@@ -36,10 +43,8 @@
 }
 
 /* General styles */
-
-
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Smooth anchor scrolling */
 }
 
 body {
@@ -52,7 +57,7 @@ body {
 }
 
 section {
-    padding: 5em 2em;
+    padding: 5em 2em; /* consistent vertical spacing between sections */
 }
 
 img {
@@ -62,34 +67,34 @@ img {
 
 strong { font-weight: var(--fw-bold) }
 
+/* Accessible focus styles for keyboard navigation */
 :focus {
     outline: 3px solid var(--clr-accent);
     outline-offset: 3px;
 }
 
 /* Buttons */
-
 .btn {
     display: inline-block;
     padding: .5em 2.5em;
     background: var(--clr-dark);
     text-decoration: none;
     cursor: pointer;
+    
     font-size: .8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: var(--fw-bold);
-    transition: transform 200ms ease-in-out;
     color: var(--clr-light);
 
+    transition: transform 200ms ease-in-out;
 }
 
 .btn:hover {
     transform: scale(1.1);
 }
 
-/* Typography */
-
+/* Typography - headings and section titles */
 h1,
 h2,
 h3 {
@@ -119,6 +124,7 @@ h3 { font-size: var(--fs-h3) }
     font-size: var(--fs-h3);
 }
 
+/* Accent subtitles for different sections */
 .section__subtitle--intro,
 .section__subtitle--about {
     background: var(--clr-accent);
@@ -134,8 +140,7 @@ h3 { font-size: var(--fs-h3) }
 }
 
 
-/* header */
-
+/* Header & Navigation - Mobile-first navigation with animated hamburger */
 header {
     display: flex;
     justify-content: space-between;
@@ -146,6 +151,7 @@ header {
     max-width: 150px;
 }
 
+/* Fullscreen mobile navigation overlay */
 .nav {
     position: fixed;
     top: 0;
@@ -159,13 +165,14 @@ header {
     z-index: 999; /* above hero content */
 }
 
-
+/* Navigation list layout */
 .nav__list {
     list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+
     height: 100%;
     margin: 0;
     padding: 0;
@@ -176,32 +183,34 @@ header {
     font-weight: var(--fw-bold);
     font-size: var(--fs-h3);
     text-decoration: none;
+
     transition: transform 200ms ease, color 200ms ease; /* smooth animation */
 
 }
 
 .nav__link:hover {
     color: var(--clr-accent);
-    
     transform: scale(1.2);
     
 }
 
+/* Hamburger toggle button */
 .nav-toggle {
     outline: none; 
     position: absolute;   /* changed from fixed */
     top: 1em;
     right: 1em;
-    z-index: 1000;
+
     background: transparent;  /* no white bg */
     border: 0;
     cursor: pointer;
+
     width: 2em;
     height: 2em;
-
-    
+     z-index: 1000;   
 }
 
+/* Navigation open state */
 .nav-open .nav{
     transform: translateX(0);
 }
@@ -232,7 +241,7 @@ header {
     transition: transform 250ms ease-in-out;
 }
 
-
+/* Hamburger icon bars */
 .hamburger,
 .hamburger::before,
 .hamburger::after {
@@ -271,7 +280,7 @@ header {
     color: var(--clr-light);
 }
 
-/* animated grid layer */
+/* animated grid backgrounding layer */
 .hero::before {
     content: "";
     position: absolute;
@@ -287,7 +296,7 @@ header {
     z-index: 0;
 }
 
-/* subtle dark overlay  */
+/* Dark overlay for contrast */
 .hero::after {
     content: "";
     position: absolute;
@@ -300,6 +309,7 @@ header {
     z-index: 1;
 }
 
+/* Keyframe animation for background motion */
 @keyframes floatGrid {
     0% {
         background-position: 0 0;
@@ -315,6 +325,7 @@ header {
     }
 }
 
+/* Keep hero content above background layers */
 .hero header,
 .hero .intro {
     position: relative;
@@ -322,19 +333,19 @@ header {
 }
 
 /*  Intro section  */
-
-.intro {
-    
+.intro { 
     position: relative;
 }
 
-
+/* Keeps subtitle sized to its content and allows positioning */
 .section__subtitle--intro {
     display: inline-block;
 }
 
-
+/* Desktop layout for intro section */
 @media (min-width: 600px) {
+
+    /* Grid layout for intro image, title, and subtitle */
     .intro {
         display: grid;
         width: min-content;
@@ -346,13 +357,15 @@ header {
         grid-template-columns: min-content max-content;
     }
     
+    /* Positions intro image within grid and layers it above overlapping elements */
     .intro__img {
         grid-area: img;
         min-width: 250px;
         position: relative;
         z-index: 2;
-    }    
-    
+    }
+
+    /* Styles and positions subtitle banner */
     .section__subtitle--intro {
         align-self: start;
         grid-column: -1 / 1;
@@ -367,7 +380,6 @@ header {
 
 
 /*  My services section  */
-
 .my-services {
     background-color: var(--clr-dark);
     background-image: url(../img/theArch2.jpg);
@@ -376,11 +388,13 @@ header {
     text-align: center;
 }
 
+/* Services section title styling */
 .section__title--services {
     color: var(--clr-light);
     position: relative;
 }
 
+/* Decorative underline below services title */
 .section__title--services::after {
     content: '';
     display: block;
@@ -391,15 +405,18 @@ header {
     opacity: 0.5;
 }
 
+/* Container for all service cards */
 .services {
     margin-bottom: 4em;
 }
 
+/* Individual service card */
 .service {
     max-width: 500px;
     margin: 0 auto;
 }
 
+/* Desktop layout for services (flex row) */
 @media (min-wdth: 800px) {
     .services {
         display: flex;
@@ -408,18 +425,21 @@ header {
         margin-right: auto;
     }
 
+    /* Adds spacing between service cards */
     .service + .ervice {
         margin-left: 2em;
     }
 }
 
+/* About Me Section */
+
+/* Centers About Me section and limits width */
 .about-me {
     max-width: 1000px;
     margin: 0 auto;
 }
 
-
-
+/* Desktop grid layout for About Me section */
 @media (min-width: 600px) {
     .about-me {
         display: grid;
@@ -431,10 +451,12 @@ header {
         grid-column-gap: 2em;
     }
 
+    /* About section title placement */
     .section__title--about {
         grid-area: title;
     }
 
+    /* Subtitle styling with extended background effect */
     .section__subtitle--about {
         grid-column: 1 / -1;
         grid-row: 2;
@@ -445,6 +467,7 @@ header {
         padding-right: calc(200px + 2em);
     }
 
+    /* About section image placement and layering */
     .about-me__img {
         grid-area: img;
         position: relative;
@@ -452,6 +475,7 @@ header {
     }   
 }
 
+/* Centers skills image container */
 .skills-image-box {
   flex: 1;
   display: flex;
@@ -459,51 +483,57 @@ header {
   margin-top: 2rem;
 }
 
+/* Ensures responsive image scaling */
 .skills-image-box img {
-  /*width: calc(100% + 1.5em); */ 
-  /*max-width: 100%;*/ 
   height: auto;
  
 }
 
+/* Portfolio / My Work */
 
-
+/* Portfolio section styling */
 .my-work {
     background-color: var(--clr-dark);
     color: var(--clr-light);
     text-align: center;
 }
 
+/* Responsive grid layout for portfolio items */
 .portfolio {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     
 }
 
+/* Individual portfolio item container */
 .portfolio__item {
     background: var(--clr-accent);
     overflow: hidden;
 }
 
+/* Smooth hover animation for portfolio images */
 .portfolio__img {
      transition: 
      transform 750ms cubic-bezier(.5, 0, .5, 1),
      opacity 250ms linear;
 }
 
+/* Brings focused portfolio item above others */
 .portfolio__item:focus {
     position: relative;
     z-index: 2;
 }
 
+/* Zoom and fade effect on hover/focus */
 .portfolio__img:hover,
 .portfolio__item:focus .portfolio__img {
     transform: scale(1.2);
     opacity: .5;
 }
 
-/* footer */
+/* Footer */
 
+/* Footer container styling */
 .footer {
     background: #111;
     color: var(--clr-accent);
@@ -512,15 +542,18 @@ header {
     font-size: var(--fs-h3);
 }
 
+/* Footer link styling */
 .footer a { 
     color: inherit;
     text-decoration: none;
 }
 
+/* Emphasized footer link */
 .footer__link {
     font-weight: var(--fw-bold);
 }
 
+/* Hover effects for footer links and social icons */
 .footer__link:hover,
 .social-list__link:hover {
     opacity: .7;
@@ -530,6 +563,7 @@ header {
     text-decoration: underline;
 }
 
+/* Social icon list layout */
 .social-list {
     list-style: none;
     display: flex;
@@ -538,89 +572,102 @@ header {
     padding: 0;
 }
 
+/* Individual social icon spacing */
 .social-list__item {
     margin: 0 .5em;
 }
 
+/* Clickable area for social icons */
 .social-list__link {
     padding: .5em;
 }
 
+/* Footer title styling */
 .footer__title {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
 
+/* Footer descriptive text */
 .footer__text {
   max-width: 800px;
   margin: 0 auto 1.25rem;
-  color: #bbb; /* adjust to your theme */
+  color: #bbb; 
   line-height: 1.6;
-  margin-bottom: 3rem; /* increase this value */
+  margin-bottom: 3rem; 
   font-size: 1.2rem;     
 }
 
 
-/* Individual portfolio item styles */
+/* Individual Portfolio Page */
 
+/* Main container for individual project pages */
 .portfolio-item-individual {
     padding: 0 2em 2em;
     max-width: 1000px;
     margin: 0 auto;
 }
 
+/* Paragraph spacing and readability */
 .portfolio-item-individual p {
-    margin: 0.5em 0;   /* top/bottom, left/right */
+    margin: 0.5em 0;   
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2rem; /* optional space below */
+    margin-bottom: 2rem; 
 }
 
+/* Secondary logo sizing */
 .logoTwo img {
-  width: 250px;   /* adjust this value */
+  width: 250px;   
   height: auto;   /* keeps proportions */
 }
 
+/* Tech stack list styling */
 .portfolio-item-individual img {
     display: block;       /* ensures proper spacing, avoids inline quirks */
     margin-bottom: 2rem;  /* adds space below the image */
 }
 
 .tech-stack {
-    max-width: 600px;       /* keep line length readable */
-    margin: 1rem auto;      /* center block */
-    padding-left: 1.2rem;   /* indent bullets slightly */
+    max-width: 600px;       
+    margin: 1rem auto;     
+    padding-left: 1.2rem;   
 }
 
+/* Tech stack list item spacing */
 .tech-stack li {
     margin-bottom: 0.6rem;  /* spacing between items */
     line-height: 1.5;       /* improves readability */
 }
 
+/* Centered subheader link styling */
 .subheader-link {
-    display: block;          /* ensures it can span full width */
-    width: 100%;             /* take up the entire container width */
-    text-align: center;      /* center the content inside */
-    margin-top: 1.5rem;      /* spacing from the subheader */
-    font-size: 1.5rem;       /* bigger text */
-    font-weight: bold;       /* optional emphasis */
+    display: block;          
+    width: 100%;             
+    text-align: center;      
+    margin-top: 1.5rem;     
+    font-size: 1.5rem;      
+    font-weight: bold;     
     padding-left: 100%;   
-    white-space: nowrap;         /* keep it all on one line */
+    white-space: nowrap;        
 }
 
+/* Subheader link appearance */
 .subheader-link .footer__link {
-    font-size: 1.6rem;       /* make the link slightly bigger */
-    color: #3B82F6;          /* Discord blue */
-    text-decoration: none;   /* remove underline initially */
+    font-size: 1.6rem;       
+    color: #3B82F6;          
+    text-decoration: none;   
     transition: opacity 0.3s;
 }
 
+/* Subheader link hover effect */
 .subheader-link .footer__link:hover {
     text-decoration: underline;
     opacity: 0.7;
 }
 
+/* Video styling for portfolio pages */
 .portfolio-item-individual video {
     max-width: 50%;
     height: auto;
