@@ -361,41 +361,37 @@ header {
     margin: 1.5rem auto; /* centers the image */
 }
 
-/* Desktop layout for intro section */
 @media (min-width: 600px) {
-
-    /* Grid layout for intro image, title, and subtitle */
     .intro {
         display: grid;
-        width: min-content;
+        width: 90%; /* let container scale */
         margin: 0 auto;
         grid-column-gap: 1em;
         grid-template-areas: 
             "img title"
             "img subtitle";
-        grid-template-columns: min-content max-content;
-    }
-    
-    /* Positions intro image within grid and layers it above overlapping elements */
-    .intro__img {
-        grid-area: img;
-        min-width: 0px;
-        position: relative;
-        z-index: 2;
+        grid-template-columns: auto 1fr; /* flexible columns */
     }
 
-    /* Styles and positions subtitle banner */
+    .intro__img {
+        grid-area: img;
+        width: clamp(150px, 30vw, 300px); /* responsive scaling */
+        height: auto;
+        position: relative;
+        z-index: 2;
+        margin: 0; /* grid handles spacing */
+    }
+
     .section__subtitle--intro {
         align-self: start;
         grid-column: -1 / 1;
         grid-row: 2;
         text-align: right;
         position: relative;
-        left: -1.5em;
-        width: calc(100% + 1.5em);
+        left: 0; /* remove negative shift */
+        width: 100%;
     }
 }
-
 
 
 /*  My services section  */
