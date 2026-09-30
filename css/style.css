@@ -524,6 +524,21 @@ header {
 .portfolio__item {
     background: var(--clr-accent);
     overflow: hidden;
+    position: relative;
+}
+
+.portfolio__label {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: .65em .8em;
+    background: rgba(0, 0, 0, .78);
+    color: var(--clr-light);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-bold);
+    line-height: 1.25;
+    text-align: left;
 }
 
 /* Smooth hover animation for portfolio images */
