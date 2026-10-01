@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Krowd Guide - Backened Development | Jacob Harris</title>
+        <title>Krowd Guide - Backend Development | Jacob Harris</title>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
@@ -32,24 +32,38 @@
         </header>
 
         <section class="intro">
-            <h1 class="section__title section__title--intro">Krowd Guide - Backened Development</h1>
-            <p class="section__subtitle section__subtitle--intro">Project overview and details</p>
+            <h1 class="section__title section__title--intro">Krowd Guide - Backend Development</h1>
+            <p class="section__subtitle section__subtitle--intro">Real time crowd and safety insights for public spaces</p>
             <img src="img/city-town-icon.png" alt="City and town icon" class="intro__img">
+            <p class="subheader-link">
+                <a href="https://krowdguide.com/" class="footer__link" target="_blank" rel="noopener noreferrer">
+                    View company website
+                </a>
+            </p>
         </section>
 
         <div class="portfolio-item-individual">
-            <p>Replace this paragraph with an introduction to your project, what it does, and who it is for.</p>
+            <p>During my internship, I worked on Krowd Guide, a platform that helps people navigate public spaces with real-time information about crowd levels, parking, atmosphere, and safety. As part of a five-person Agile engineering team, I focused primarily on backend development and data integration, connecting Supabase services to the FlutterFlow application.</p>
+
+            <img src="img/krowd_guide_logo.jpg" alt="Krowd Guide logo" class="project-logo">
+
+            <h3>Purpose</h3>
+            <p>My goal was to make machine-learning-generated data from external sources useful in the app. I designed and deployed three PostgreSQL tables and implemented secure, reusable Supabase APIs and database functions that exposed structured information, including zones and time-based crowd patterns. I also connected backend services to FlutterFlow so the frontend could query and display data across more than 600,000 rows.</p>
 
             <h3>Tech Stack</h3>
             <ul class="tech-stack">
-                <li>Add the programming language, frameworks, and tools used.</li>
+                <li><strong>Frontend:</strong> FlutterFlow</li>
+                <li><strong>Backend and database:</strong> Supabase and PostgreSQL</li>
+                <li><strong>Data access:</strong> Backend APIs, PostgreSQL functions, and structured queries</li>
+                <li><strong>Frontend integration:</strong> FlutterFlow API calls and custom Dart actions</li>
+                <li><strong>Data scale:</strong> Queries across more than 600,000 database rows</li>
             </ul>
 
             <h3>Challenges</h3>
-            <p>Describe a technical challenge you worked through and how you approached it.</p>
+            <p>One of the main challenges was making pre-existing database tables easier to maintain and scale. Some tables duplicated information and used separate keys for the same entities, which made relationships harder to follow. I helped reorganize the schemas with more consistent keys and clearer primary-key relationships, refined data types, and made queries more reusable. This reduced redundancy, improved data integrity, and made it easier for the frontend team to work with the data as requirements changed.</p>
 
             <h3>What I Learned</h3>
-            <p>Share the main skills or ideas you gained while building this project.</p>
+            <p>This internship strengthened my fundamentals in backend development, relational data modeling, and API integration. I gained hands-on experience connecting Supabase logic to FlutterFlow with API calls and custom Dart actions, while coordinating query behavior and data structures with a five-person Agile team. It also taught me to document backend work, adapt to changing requirements, and build data systems with maintainability and scale in mind.</p>
         </div>
 
         <footer class="footer">

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio Project 04 | Jacob Harris</title>
+        <title>Assistivox - Full-Stack Developer | Jacob Harris</title>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
@@ -32,24 +32,41 @@
         </header>
 
         <section class="intro">
-            <h1 class="section__title section__title--intro">Portfolio Project 04</h1>
-            <p class="section__subtitle section__subtitle--intro">Project overview and details</p>
+            <h1 class="section__title section__title--intro">Assistivox - Full-Stack Developer</h1>
+            <p class="section__subtitle section__subtitle--intro">Voice driven tools make documents more accessible</p>
             <img src="img/screen_reader.png" alt="Screen reader icon" class="intro__img">
+            <p class="subheader-link">
+                <a href="https://github.com/JacobHarris-Dev/semantic-nav" class="footer__link" target="_blank" rel="noopener noreferrer">
+                    View GitHub Repository
+                </a>
+            </p>
         </section>
 
         <div class="portfolio-item-individual">
-            <p>Replace this paragraph with an introduction to your project, what it does, and who it is for.</p>
+            <p>Assistivox is an accessible document reader that helps users navigate longer documents and find relevant passages through semantic search. It combines a reader interface with speech playback, chunk-by-chunk navigation, and search results that can be highlighted in the source text.</p>
+
+            <video class="portfolio-demo--large" autoplay loop muted playsinline>
+                <source src="img/semantic_nav_demo2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <h3>Purpose</h3>
+            <p>I developed Assistivox for research at the University of Georgia under Dr. Bill Hollingsworth. My goal was to make document content easier to access, especially for people who benefit from spoken content or need to locate a particular idea without scanning every page. By pairing semantic search with reader navigation, users can move from a relevant result to its place in the document.</p>
 
             <h3>Tech Stack</h3>
             <ul class="tech-stack">
-                <li>Add the programming language, frameworks, and tools used.</li>
+                <li><strong>Backend:</strong> Python and FastAPI</li>
+                <li><strong>Document processing:</strong> spaCy and PyMuPDF</li>
+                <li><strong>Semantic search:</strong> sentence-transformers with all-MiniLM-L6-v2, FAISS, and scikit-learn</li>
+                <li><strong>Frontend:</strong> React 18 and Vite 5</li>
+                <li><strong>Accessibility:</strong> Browser text-to-speech and keyboard-friendly reader navigation</li>
             </ul>
 
             <h3>Challenges</h3>
-            <p>Describe a technical challenge you worked through and how you approached it.</p>
+            <p>One of the main challenges was turning different document formats into useful search chunks without losing where each passage came from. The backend extracts and indexes document text, while character offsets and page information connect each search result back to the reader for highlighting and navigation.</p>
 
             <h3>What I Learned</h3>
-            <p>Share the main skills or ideas you gained while building this project.</p>
+            <p>This project helped me understand how semantic search depends on the entire pipeline, from text extraction and chunking to embeddings, indexing, and the reader interface. I also gained experience designing an API and accessible reading interactions that put search results in context instead of presenting them as isolated matches.</p>
         </div>
 
         <footer class="footer">

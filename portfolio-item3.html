@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio Project 03 | Jacob Harris</title>
+        <title>TradeWise AI | Jacob Harris</title>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
@@ -32,24 +32,41 @@
         </header>
 
         <section class="intro">
-            <h1 class="section__title section__title--intro">Portfolio Project 03</h1>
-            <p class="section__subtitle section__subtitle--intro">Project overview and details</p>
+            <h1 class="section__title section__title--intro">TradeWise AI</h1>
+            <p class="section__subtitle section__subtitle--intro">AI powered trading insights for smarter investment decisions</p>
             <img src="img/stock_icon.png" alt="Stock market icon" class="intro__img">
+            <p class="subheader-link">
+                <a href="https://github.com/JacobHarris-Dev/TradeWise-AI" class="footer__link" target="_blank" rel="noopener noreferrer">
+                    View GitHub Repository
+                </a>
+            </p>
         </section>
 
         <div class="portfolio-item-individual">
-            <p>Replace this paragraph with an introduction to your project, what it does, and who it is for.</p>
+            <p>TradeWise AI is an AI-driven paper-trading platform that lets users explore stock trades and understand the reasoning behind each signal. It brings market data, quantitative analysis, and plain-language explanations together in a dashboard, allowing users to simulate decisions without placing real trades.</p>
+
+            <video class="portfolio-demo--large" autoplay loop muted playsinline>
+                <source src="img/tradewise-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <h3>Purpose</h3>
+            <p>I built TradeWise for Devs on Wall Street's flagship hackathon, where our team earned 3rd place. My goal was to create an end-to-end tool that makes trading analysis easier to explore and explain. By connecting a quantitative signal engine to a user-facing dashboard and explanation layer, I wanted users to test trade ideas while seeing why the system produced a signal.</p>
 
             <h3>Tech Stack</h3>
             <ul class="tech-stack">
-                <li>Add the programming language, frameworks, and tools used.</li>
+                <li><strong>Frontend:</strong> Next.js, React, and Firebase Authentication</li>
+                <li><strong>Backend:</strong> Python and FastAPI</li>
+                <li><strong>Quantitative analysis:</strong> NumPy, pandas, Matplotlib, and QuantLib</li>
+                <li><strong>Market data:</strong> yfinance for historical training, with Alpaca available as a runtime provider</li>
+                <li><strong>AI explanations:</strong> Quantitative signals with supporting news context and Qwen/Ollama integration</li>
             </ul>
 
             <h3>Challenges</h3>
-            <p>Describe a technical challenge you worked through and how you approached it.</p>
+            <p>One of the main challenges was coordinating market data and analysis across a web app and a separate Python API while keeping explanations grounded in the quantitative signal. The project keeps the model-generated signal as the basis for each trade insight and uses recent news as supporting context, rather than letting an AI-generated explanation replace the underlying analysis.</p>
 
             <h3>What I Learned</h3>
-            <p>Share the main skills or ideas you gained while building this project.</p>
+            <p>Building TradeWise gave me experience connecting a web frontend with a Python machine-learning service and shaping a workflow from market data to model output to user-facing explanation. I learned to treat data handling, quantitative analysis, and clear communication as connected parts of a usable financial application.</p>
         </div>
 
         <footer class="footer">

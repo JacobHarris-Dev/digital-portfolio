@@ -280,20 +280,27 @@ header {
     color: var(--clr-light);
 }
 
-/* animated grid backgrounding layer */
-.hero::before {
-    content: "";
+/* Independently drifting fireflies in the hero background */
+#particles {
     position: absolute;
     inset: 0;
-
-    background-image:
-        radial-gradient(circle at 1px 1px,
-        rgba(255,255,255,.5) 2px,
-        transparent 0);
-
-    background-size: 28px 28px;
-    animation: floatGrid 12s ease-in-out infinite;
+    overflow: hidden;
+    pointer-events: none;
     z-index: 0;
+}
+
+.firefly {
+    position: absolute;
+    top: var(--start-y);
+    left: var(--start-x);
+    width: var(--firefly-size);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: #e5ffb8;
+    box-shadow: 0 0 7px 2px rgba(216, 255, 154, .72),
+                0 0 17px 5px rgba(170, 255, 126, .32);
+    opacity: .16;
+    animation: fireflyDrift var(--duration) ease-in-out var(--delay) infinite;
 }
 
 /* Dark overlay for contrast */
@@ -309,19 +316,29 @@ header {
     z-index: 1;
 }
 
-/* Keyframe animation for background motion */
-@keyframes floatGrid {
-    0% {
-        background-position: 0 0;
-        transform: translateY(0);
+@keyframes fireflyDrift {
+    0%, 100% {
+        transform: translate3d(0, 0, 0);
+        opacity: .14;
     }
-    50% {
-        background-position: 40px 60px;
-        transform: translateY(-10px);
+    22% {
+        transform: translate3d(var(--drift-one-x), var(--drift-one-y), 0);
+        opacity: .9;
     }
-    100% {
-        background-position: 0 0;
-        transform: translateY(0);
+    48% {
+        transform: translate3d(var(--drift-two-x), var(--drift-two-y), 0);
+        opacity: .3;
+    }
+    73% {
+        transform: translate3d(var(--drift-three-x), var(--drift-three-y), 0);
+        opacity: .8;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .firefly {
+        animation: none;
+        opacity: .42;
     }
 }
 
@@ -679,6 +696,13 @@ header {
     margin-bottom: 2rem;  /* adds space below the image */
 }
 
+.portfolio-item-individual .project-logo {
+    width: 50%;
+    max-width: 800px;
+    height: auto;
+    margin: 2rem auto;
+}
+
 .tech-stack {
     max-width: 600px;       
     margin: 1rem auto;     
@@ -722,9 +746,21 @@ header {
     border-radius: 8px;
 }
 
+.portfolio-item-individual video.portfolio-demo--large {
+    width: 75%;
+}
+
 /* For small screens */
 @media (max-width: 768px) {
+    .portfolio-item-individual .project-logo {
+        width: 90%;
+    }
+
     .portfolio-item-individual video {
         width: 90%;   /* nearly full width on mobile */
+    }
+
+    .portfolio-item-individual video.portfolio-demo--large {
+        width: 90%;
     }
 }
